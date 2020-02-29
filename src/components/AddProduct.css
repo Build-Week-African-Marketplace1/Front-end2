@@ -1,5 +1,23 @@
-/* @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
-/* .add-product {
-    font-family: 'Poppins', ;
-} */
+body {
+    font-family: 'Poppins';
+    max-width: 100%;
+}
+
+.add-product {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.add-product-left {
+    background-color: #142051;
+    color: #FE7A7c;
+}
+
+.add-product-right {
+    display: flex;
+    flex-direction: column;
+}
+
