@@ -5,8 +5,10 @@ import SignUp from './content/signup';
 import {BrowserRouter as Router, Link, Switch, Route} from 'react-router-dom'
 import PrivateRoute from './content/privateRoute';
 import Bub from './content/Bub';
+import AddProduct from './content/AddProduct';
 
-import MarketContext from './content/context';
+
+
 
 function App() {
 
@@ -35,17 +37,18 @@ function App() {
             <Link to='/home'>Home</Link>
             <Link to='/login'>Login</Link>
             <Link to='/signup'> Sign Up</Link>
+            <Link to='/add'> Add </Link>
+
             </div>
 
-            <MarketContext.Provider value={{userInfo}}>
               
             <Switch>
               <PrivateRoute path='/home' component={Bub} />
               <Route exact path='/login' component={Login} />
               <Route path='/signup' component={SignUp} />
+              <Route path='/add' component={AddProduct} />
             </Switch>
 
-            </MarketContext.Provider>
 
 
           </Router>
@@ -55,4 +58,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
