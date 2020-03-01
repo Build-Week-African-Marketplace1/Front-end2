@@ -4,6 +4,7 @@ import './AddProduct.css';
 import { withFormik, Form, Field } from "formik";
 import * as yup from "yup";
 
+
 const AddProduct = ({ touched, errors, status }) => {
   console.log("This is our status", status);
   const [products, setProducts] = useState({});
@@ -75,7 +76,7 @@ export default withFormik({
     // console.log("Submitting!", formikBag)
     // POST body === {}
     axios
-      .post("https://african-marketplace-bw-1.herokuapp.com/api/inputs", values)
+      .put("https://african-marketplace-bw-1.herokuapp.com/api/inputs", values)
       .then(response => {
         console.log(response);
         setStatus(response.data);
