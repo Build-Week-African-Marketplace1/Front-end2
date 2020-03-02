@@ -22,26 +22,26 @@ const AddProduct = ({ touched, errors, status }) => {
       <Form className="add-product-right">
         <label>
           Location
-          <Field type="text" name="location" placeholder="Where are you located?" />
+          <Field type="text" name="location" className="location" placeholder="Where are you located?" />
           {touched.products && errors.products && (
             <p className="errors">{errors.products}</p>
           )}
         </label>
         <label>
           Category
-          <Field type="text" name="category" placeholder="Categorize your item" />
+          <Field type="text" name="category" className="category" placeholder="Categorize your item" />
         </label>
         <label>
           Item
-          <Field type="text" name="item" placeholder="Name it" />
+          <Field type="text" name="item" className="item" placeholder="Name it" />
         </label>
         <label>
           Description
-          <Field type="text" name="description" placeholder="Add a description" />
+          <Field type="text" name="description" className="description" placeholder="Add a description" />
         </label>
         <label>
           Price
-          <Field type="number" name="price" placeholder="Put a price tag" />
+          <Field type="number" name="price" className="price" placeholder="Put a price tag" />
         </label>
         <button type="button">Add Product</button>
       </Form>
