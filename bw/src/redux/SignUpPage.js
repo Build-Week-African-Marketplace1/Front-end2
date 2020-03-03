@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios'
+import axiosWithAuth from './withAuth/axiosWithAuth';
 
 class SignUp extends React.Component {
 
@@ -25,14 +25,17 @@ class SignUp extends React.Component {
     onSubmit = e => {
         e.preventDefault()
         
-        axios.post('https://african-marketplace-bw-1.herokuapp.com/api/auth/register', this.state.info)
-        .then(res => console.log(res))
+        axiosWithAuth().post('/auth/register', this.state.info)
+        .then(res => {
+            console.log(res)
+        })
         .catch(err => console.log(err))
         this.props.history.push('/login')
     }
 
 
-    render(){
+    render() {
+        
         return(
             <div>
                 <form className='formContainer' onSubmit={this.onSubmit}>
@@ -80,6 +83,7 @@ class SignUp extends React.Component {
                     <button>Sign Up</button>
                 </form>
             </div>
+
         )
     }
 }

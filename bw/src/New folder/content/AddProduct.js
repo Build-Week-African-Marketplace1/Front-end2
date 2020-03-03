@@ -44,7 +44,7 @@ const AddProduct = ({ touched, errors, status }) => {
           Price
           <Field type="number" name="price" placeholder="Put a price tag" />
         </label>
-        <button type="button">Add Product</button>
+        <button>Add Product</button>
       </Form>
       {products.props && (
         <div>
