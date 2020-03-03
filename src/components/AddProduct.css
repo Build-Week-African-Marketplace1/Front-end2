@@ -43,7 +43,7 @@ body {
     width: 500px;
 }
 
-Form {
+form {
     width: 1440px;
     margin-left: 18%;
     margin-top: 150px;
@@ -60,7 +60,7 @@ label {
     color: #191c48;
 }
 
-.location, .category, .item, .description, .price {
+input {
     background: #FFFFFF;
     border: 1px solid #000000;
     margin-bottom: 20px;

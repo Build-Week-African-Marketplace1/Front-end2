@@ -1,86 +1,85 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import './AddProduct.css';
-import { withFormik, Form, Field } from "formik";
-import * as yup from "yup";
 
-const AddProduct = ({ touched, errors, status }) => {
-  console.log("This is our status", status);
-  const [products, setProducts] = useState({});
+function AddProduct() {
+  const [product, setProduct] = useState({ location: "", category: "", item: "", description: "", price: "" });
 
-  useEffect(() => {
-    status && setProducts(status);
-  }, [status]);
+  const handleChange = event => {
+    setProduct({ ...product, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    setProduct({ location: '', category: '', item: '', description: '', price: '' });
+
+    axios
+      .post("https://african-marketplace-bw-1.herokuapp.com/api/inputs", product)
+      .then(response => {
+        console.log(response);
+        // console.log(response.data);
+        setProduct(response.data);
+      })
+      .catch(err => console.log(err.response));
+  };
 
   return (
-    
     <div className="add-product">
+      {console.log(product)}
       <div className="add-product-left">
         <h1>Sauti</h1>
         <h2>Add a product</h2>
       </div>
-      <Form className="add-product-right">
+      <form onSubmit={event => handleSubmit(event)} className="add-product-right">
         <label>
-          Location
-          <Field type="text" name="location" className="location" placeholder="Where are you located?" />
-          {touched.products && errors.products && (
-            <p className="errors">{errors.products}</p>
-          )}
+          Location:
+          <input
+            type="text"
+            name="location"
+            value={product.location}
+            onChange={event => handleChange(event)}
+          />
         </label>
         <label>
-          Category
-          <Field type="text" name="category" className="category" placeholder="Categorize your item" />
+          Category:
+          <input
+            type="text"
+            name="category"
+            value={product.category}
+            onChange={event => handleChange(event)}
+          />
         </label>
         <label>
-          Item
-          <Field type="text" name="item" className="item" placeholder="Name it" />
+          Item:
+          <input
+            type="text"
+            name="item"
+            value={product.item}
+            onChange={event => handleChange(event)}
+          />
         </label>
         <label>
-          Description
-          <Field type="text" name="description" className="description" placeholder="Add a description" />
+          Description:
+          <input
+            type="text"
+            name="description"
+            value={product.description}
+            onChange={event => handleChange(event)}
+          />
         </label>
         <label>
-          Price
-          <Field type="number" name="price" className="price" placeholder="Put a price tag" />
+          Price:
+          <input
+            type="number"
+            name="price"
+            value={product.price}
+            onChange={event => handleChange(event)}
+          />
         </label>
-        <button type="button">Add Product</button>
-      </Form>
-      {products.props && (
-        <div>
-            <p>Location: {products.location}</p>
-            <p>Category: {products.category}</p>
-            <p>Item: {products.item}</p>
-            <p>Description: {products.description}</p>
-            <p>Price: {products.price}</p>
-        </div>
-      )}
+        <button type="submit">Add Product</button>
+      </form>
     </div>
   );
-};
+}
 
-export default withFormik({
-  mapPropsToValues: props => ({
-    location: "",
-    category: "",
-    item: "",
-    description: "",
-    price: ""
-  }),
-  validationSchema: yup.object().shape({
-    location: yup
-      .string()
-      .required("Mandatory field")
-  }),
-  handleSubmit: (values, { resetForm, setStatus }) => {
-    // console.log("Submitting!", formikBag)
-    // POST body === {}
-    axios
-      .post("https://african-marketplace-bw-1.herokuapp.com/api/inputs", values)
-      .then(response => {
-        console.log(response);
-        setStatus(response.data);
-        resetForm();
-      })
-      .catch(err => console.log(err.response));
-  }
-})(AddProduct);
+export default AddProduct;
