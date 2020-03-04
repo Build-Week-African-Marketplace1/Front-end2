@@ -3,6 +3,7 @@ import axiosWithAuth from './withAuth/axiosWithAuth'
 
 
 function Products ({id, location, category, item, description, price}) {
+    
 
     const deleteProduct = () => {
         
@@ -14,15 +15,6 @@ function Products ({id, location, category, item, description, price}) {
 
     }
 
-    const editProduct = e => {
-        e.preventDefault()
-        axiosWithAuth().put(`/inputs/${id}`)
-        .then(res => console.log('Edited Product', res))
-        .catch(err => console.log('Error, Product Not Edited', err))
-    }
-
-
-
 
     return(
 
@@ -33,8 +25,7 @@ function Products ({id, location, category, item, description, price}) {
             <p> {category} </p>
             <p> {price} </p>
             <span onClick={deleteProduct}>X</span>
-            <button onClick={editProduct}>Edit</button>
-            
+
         </div>
 
     )

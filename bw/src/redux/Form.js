@@ -30,11 +30,10 @@ class Form extends React.Component {
             item: '',
             description: '',
             price: ''
+            
         });
-        this.props.history.push('/list')
-    
     };
-
+    
 
 
     render() {
@@ -88,8 +87,6 @@ class Form extends React.Component {
 
 
                 <button onClick={this.onSubmit}> Add </button>
-                <button> Delete </button>
-                <button onClick={this.Edit}> Edit </button>
 
             </form>
         )

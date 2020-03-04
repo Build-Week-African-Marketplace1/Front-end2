@@ -16,11 +16,11 @@ class Login extends React.Component {
         e.preventDefault()
         axiosWithAuth().post(`/auth/login`, this.state.login)
         .then(res => {
-            console.log('Fetch_Post_Data' , res)
-            localStorage.setItem('token', res.data.token)}) 
-        
+            console.log('Fetch_Post_Data' , res.data)
+            localStorage.setItem('token', res.data.token)
+            this.props.history.push('/')
+        }) 
         .catch(err => console.log(err))
-        this.props.history.push('/')
     }
 
     onChange = e => {
@@ -34,7 +34,7 @@ class Login extends React.Component {
     render() {
 
         return(
-            <div>
+        <div className='star'>
                 <form onSubmit={this.onSubmit}>
                     <label>Username: </label>
                     <input 
@@ -42,7 +42,6 @@ class Login extends React.Component {
                     name='name'
                     value={this.state.login.name}
                     onChange={this.onChange}
-
                     />
 
 
