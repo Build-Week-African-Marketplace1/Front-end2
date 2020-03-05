@@ -9,17 +9,17 @@ const ProductList = ({productToAdd}) => {
 
 
         return (
+
             <div>
                 {productToAdd.map(product => (
                     <Product
-                    key={product.id}
                     id={product.id}
                     item={product.item}
                     description={product.description}
                     category={product.category}
                     price ={product.price}
                     location ={product.location}
-                />
+                    />
                     
                 ))}
                 

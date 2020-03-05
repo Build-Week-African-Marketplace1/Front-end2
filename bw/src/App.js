@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Info from './redux/info';
-
 
 function App() {
 
@@ -9,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <h1> African MarketPlace </h1>
       
       <Info />
           

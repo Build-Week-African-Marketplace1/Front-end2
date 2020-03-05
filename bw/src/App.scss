@@ -1,0 +1,173 @@
+.App {
+  text-align: center;
+  font-family: Poppins;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background: #142051;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+input {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  line-height: 24px;
+  padding-left: 10px;
+  transition: transform 1s;
+
+}
+
+
+
+button {
+  width: 355px;
+  margin-left: 75px;
+  margin-top: 100px;
+  background-color: #191C48;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  padding: 2%;
+  border-radius: 10%;
+  transition: 2s;
+
+  &:hover {
+    color: #FE3F43;
+    cursor: progress;
+    // transform: rotate(1080deg);
+    transform: scale(1.2);
+    transition: 2s;
+    transition-timing-function: ease-in-out;
+  }
+
+  
+}
+
+
+label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 3;
+  color: #191c48;
+}
+
+form {
+  width: 1440px;
+  margin-left: 18%;
+  margin-top: 150px;
+}
+
+.sign {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 930px;
+  
+}
+
+
+.left {
+  background-color: #142051;
+  color: #FE7A7c;
+  width: 749px;
+  margin-bottom: 10%;
+
+  h1 {
+    color: #FE717C;
+    border-bottom: solid 2px #e9e9e9;
+    margin-left: 83px;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 600px;
+    font-size: 98px;
+    margin-top: 100px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+  }
+  h2 {
+    color: #FE717C;
+    text-align: left;
+    margin-left: 83px;
+    margin-top: 0px;
+    width: 770px;
+    font-weight: 300;
+    font-size: 62px;
+    font-family: Poppins;
+    font-style: normal;
+    line-height: 1;
+  }
+
+  p {
+    color: white;
+    width: 590px;
+    margin-left: 83px;
+    text-align: left;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 2;
+  }
+
+  .background {
+    background-image: url('/src/img/Product\ Icon.jpg');
+  }
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-left: 120%;
+    margin-top: 0;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 50%;
+
+    h1 {
+      color: #191c48;
+      font-size: 40px;
+    }
+
+}

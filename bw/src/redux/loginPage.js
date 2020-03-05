@@ -14,6 +14,7 @@ class Login extends React.Component {
 
     onSubmit = e => {
         e.preventDefault()
+
         axiosWithAuth().post(`/auth/login`, this.state.login)
         .then(res => {
             console.log('Fetch_Post_Data' , res.data)
@@ -21,7 +22,12 @@ class Login extends React.Component {
             this.props.history.push('/')
         }) 
         .catch(err => console.log(err))
-    }
+    
+
+        } 
+
+
+        
 
     onChange = e => {
         this.setState({
@@ -34,8 +40,23 @@ class Login extends React.Component {
     render() {
 
         return(
-        <div className='star'>
-                <form onSubmit={this.onSubmit}>
+
+            <div className='sign'>
+                <div className='left'>
+                    <h1> Sauti </h1>
+
+                    <h2> Grow your business </h2>
+
+                    <p> The sauti Trade and Market Information platform provides official, simplified, and real time trade procedures, market prices, and exchange rates </p>
+
+                    <div className='background'></div>
+                </div>
+
+
+<div className='container'>
+                <form  className='right' onSubmit={this.onSubmit}>
+                <h1 className='create'> Sign In </h1>
+
                     <label>Username: </label>
                     <input 
                     type='text'
@@ -56,7 +77,7 @@ class Login extends React.Component {
                     <button> Login </button>
                 </form>
 
-
+</div>
             </div>
         )
     }

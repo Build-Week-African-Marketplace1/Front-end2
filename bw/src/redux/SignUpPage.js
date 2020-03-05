@@ -37,15 +37,27 @@ class SignUp extends React.Component {
     render() {
         
         return(
-            <div>
-                <form className='formContainer' onSubmit={this.onSubmit}>
-                    <label>Full Name</label>
+            <div className='sign'>
+                <div className='left'>
+                    <h1> Sauti </h1>
+
+                    <h2> Grow your business </h2>
+
+                    <p> The sauti Trade and Market Information platform provides official, simplified, and real time trade procedures, market prices, and exchange rates </p>
+
+                </div>
+
+
+        <div className='container'>
+
+                <form className="right" onSubmit={this.onSubmit}>
+                <h1 className='create'>Create Account </h1>
+                    <label>Full Name </label>
                     <input 
                     type='text'
                     name='name'
                     value={this.state.info.name}
                     onChange={this.onHandle}
-                    maxLength={8}
                     />
 
                     <label>Password</label>
@@ -58,7 +70,7 @@ class SignUp extends React.Component {
 
                     <label>Phone</label>
                     <input 
-                    type='number'
+                    type='text'
                     name='phone'
                     value={this.state.info.phone}
                     onChange={this.onHandle}
@@ -81,7 +93,9 @@ class SignUp extends React.Component {
                     />
 
                     <button>Sign Up</button>
+
                 </form>
+            </div>
             </div>
 
         )

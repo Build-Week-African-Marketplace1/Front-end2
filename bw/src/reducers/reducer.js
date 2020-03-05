@@ -15,6 +15,7 @@ import {
 
 const initial = {
     info : {
+        id: '',
         name: '',
         password: '',
         phone: '',
