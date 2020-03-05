@@ -4,7 +4,7 @@ import './AddProduct.css';
 // import Popup from './Popup.js'
 
 function AddProduct() {
-  const [product, setProduct] = useState({ location: "", category: "", item: "", description: "", price: "" });
+  const [product, setProduct] = useState({ id: "", location: "", category: "", item: "", description: "", price: "" });
 
   const handleChange = event => {
     setProduct({ ...product, [event.target.name]: event.target.value });
