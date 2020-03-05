@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './AddProduct.css';
+// import Popup from './Popup.js'
 
 function AddProduct() {
   const [product, setProduct] = useState({ location: "", category: "", item: "", description: "", price: "" });
@@ -76,7 +77,12 @@ function AddProduct() {
             onChange={event => handleChange(event)}
           />
         </label>
-        <button type="submit">Add Product</button>
+        <button type="submit"> 
+          Add Product
+        </button>
+        {/* <div className="button">
+          <Popup />
+        </div> */}
       </form>
     </div>
   );
