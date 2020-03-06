@@ -80,9 +80,6 @@ function AddProduct() {
         <button type="submit"> 
           Add Product
         </button>
-        {/* <div className="button">
-          <Popup />
-        </div> */}
       </form>
     </div>
   );
