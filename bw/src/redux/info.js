@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import LoginPage from './loginPage';
 import SignUpPage from './SignUpPage';
 import AddProduct from './AddProductFunction';
@@ -10,6 +10,9 @@ import ProfilePage from './Profile'
 import '../fonts/Poppins-Regular.otf';
 import data from '../data'
 import { ProfileContext } from './profileContext';
+import '../petros/AddProduct.css';
+
+
 // import Module from  '../module'
 
 
@@ -23,15 +26,14 @@ const Info = () => {
     return(
         <ProfileContext.Provider  value={{profile}}>
         <Router>
-            {/* <Link to='/home'>Home</Link>
+<nav>
+            <Link to='/list'>List</Link>
+            <Link to='/add'>Add Product</Link>
+            <Link to='/edit'>Edit Product</Link>
+            <Link to='/profile'>Profile</Link>
             <Link to='/login'>Login</Link>
-            <Link to='/register'> Sign Up</Link>
-            <Link to='/list'> Listing </Link>
-            <Link to='/add'> Add Product </Link>
-            <Link to='/edit'>Edit</Link>
-            <Link to='/profile'>Profile</Link> */}
-        
-            
+            <Link to='/register'>Register</Link>
+</nav>
             <Switch>
                 <PrivateRoute path='/list' component={AddProduct} />    
                 <PrivateRoute path='/add' component={Form} />
